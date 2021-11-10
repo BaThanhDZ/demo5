@@ -1,0 +1,288 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+	background-color: #F5F5F5;
+	font-family: 'Tajawal', sans-serif;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a:hover {
+	text-decoration: none;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tajawal&display=swap');
+
+$colorText: #DFDFDF;
+$colorHover:  #757575;
+$colorDefault: #51C1EB;
+$colorBG: #0F0F0F;
+
+main {
+	background-color: white;
+	position: relative;
+	box-shadow: 0 0 10px black;
+   border-bottom: 1px solid black;
+   overflow: hidden;
+	&::before {
+		position: absolute;
+		transform: skew(140deg);
+		width: 75%;
+		height: 600px;
+		content: '';
+		background: $colorHover;
+		z-index: 1;
+		top: 100px;
+		left: -585px;
+		//opacity: 0.6;
+	}
+	&::after {
+		position: absolute;
+		transform: skewY(-117deg);
+		width: 100%;
+		height: 2170px;
+		left: 0;
+		content: '';
+		background: $colorDefault;
+		z-index: 1;
+		bottom: -1090px;
+		opacity: 0.2;
+	}
+}
+
+.thread {
+	//box-shadow: 0 0 20px;
+	color: $colorText;
+	text-transform: uppercase;
+	margin-bottom: 50px;
+	background-color: $colorHover;
+	font-family: 'Roboto', sans-serif;
+	position: relative;
+	z-index: 3;
+	&::after {
+		position: absolute;
+		content: '';
+		transform: skew(140deg);
+		width: 25%;
+		height: 104px;
+		content: '';
+		background: white;
+		z-index: 2;
+		top: 0;
+		right: -45px;
+	}
+}
+
+.article {
+	position: relative;
+	z-index: 3;
+	.info {
+		.row {
+			.col-md-3 p { font-weight: bold;}
+			.shadow-lg { background: #F5F5F5;}
+			h5 {
+				position: relative;
+				text-transform: uppercase;
+				background: $colorBG;
+				color: white;
+				padding: 10px 15px;
+				border-radius: 20px 30px 30px 0;
+				&:hover {
+					color: $colorHover;
+					cursor: pointer;
+					box-shadow: 0 0 20px $colorBG;
+					background: white;
+					&::after { background: $colorBG;}
+				}
+				&::after {
+					position: absolute;
+					content: '';
+					background: white;
+					height: 100%;
+					width: 5px;
+					z-index: 2;
+					top: 0;
+					left: 50px;
+				}
+			}
+			p { line-height: 1.5;}
+			a { 
+				color: black;
+				&:hover { color: $colorHover;}
+			}
+			.control-img {
+				position: relative;	
+				display: flex;
+				img {
+					width: 100%;
+					border-radius: 20px;
+				}
+				.contact {
+					position: absolute;
+					z-index: 2;
+					top: 50%;
+					left: 22%;
+					ul {
+						clear: both;
+						content: '';
+						.test1 { padding: 10px 14px;}
+						li {
+							float: left;
+							a { 
+								color: white;
+								font-size: 25px;
+								padding: 10px;
+								margin: 0 5px;
+								background: $colorDefault;
+								border-radius: 20px;
+								&:hover { background: $colorHover;}
+							}
+						}
+					}
+				}
+				&:hover {
+					box-shadow: 0 0 10px black;
+					//opacity: 0.8;
+					overflow: hidden;
+					border-radius: 20px;
+					img {
+						transform: scale(1.1, 1.1);
+						transition: 1s;
+					}
+					.contact { display: block !important;}
+				}
+			}
+		}
+	}
+
+	.edu, .skill, .lang, .exp_project, .exp_work, .ref, .other {
+		.col-md-12 {
+			.h5 {
+				position: relative;
+				h5 {
+					position: relative;
+					text-transform: uppercase;
+					background: $colorBG;
+					color: white;
+					padding: 10px 15px;
+					border-radius: 20px 30px 30px 0;
+					&:hover {
+						color: $colorHover;
+						cursor: pointer;
+						box-shadow: 0 0 20px $colorBG;
+						background: white;
+						&::after { background: $colorBG;}
+					}
+					&::after {
+						position: absolute;
+						content: '';
+						background: #F5F5F5;
+						height: 100%;
+						width: 5px;
+						z-index: 2;
+						top: 0;
+						left: 50px;
+					}
+				}
+			}
+			.content {
+				span {
+					font-size: 20px; 
+					color: $colorDefault;
+				}
+				line-height: 1.5;
+			}
+			&::after {
+				position: absolute;
+				height: auto;
+				border-right: 1px dotted black;
+				content: '';
+				bottom: 0;
+				left: 5%;
+				z-index: 2;
+			}
+		}
+	}
+	.edu .col-md-12 {
+		&::after { top: 36%;}
+	}
+	.skill .col-md-12 {
+		&::after { top: 16%;}
+		.content ul { list-style: inside;}
+	}
+	.lang .col-md-12 {
+		&::after { top: 37%;}
+	}
+	.ref .col-md-12 {
+		&::after { top: 45%;}
+		.col-md-1 p { font-weight: bold;}
+		p { line-height: 1.5;}
+	}
+	.other {
+		.col-md-12 {
+		margin-bottom: 50px;
+			&::after { top: 75%;}
+			ul { 
+				clear: both;
+				content: '';
+				display: table;
+				list-style: inside;
+				line-height: 1.5;
+				li { 
+					float: left;
+					padding-right: 50px;
+				}
+			}
+		}
+		&::after {
+			position: absolute;
+			z-index: 2;
+			content: '';
+			width: 50%;
+			left: 25%;
+			border-top: 1px solid black;
+		}
+	}
+}
